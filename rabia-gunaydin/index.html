@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Günaydın Rabia 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      width: 420px;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      margin: 20px 0;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+      display: none;
+    }
+
+    ul.show {
+      display: block;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    /* İSA ÖZEL */
+    .isa {
+      font-size: 22px;
+      font-weight: bold;
+      animation: parla 1.2s infinite alternate;
+    }
+
+    @keyframes parla {
+      from {
+        transform: scale(1);
+        color: #ff4d6d;
+      }
+      to {
+        transform: scale(1.3);
+        color: #ff1e56;
+      }
+    }
+
+    /* EMOJI YAĞMURU */
+    .emoji {
+      position: absolute;
+      top: -30px;
+      font-size: 24px;
+      animation: dus 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes dus {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Günaydın Rabia 🌸</h1>
+
+    <p>
+      Dün söyleyemediklerimi,<br>
+      bugün kalbimden bir siteyle anlatmak istedim ❤️
+    </p>
+
+    <button onclick="goster()">Rabia’nın Favorileri</button>
+
+    <ul id="favoriler">
+      <li class="isa">🧔🏽‍♂️ İsa ❤️</li>
+      <li>🥐 Açma</li>
+      <li>🍝 Makarna</li>
+      <li>🧃 Karışık Meyve Suyu</li>
+      <li>🍈 Kavun & 🍓 Çilekli Fuse Tea</li>
+      <li>🍉 Karpuzlu Red Bull</li>
+    </ul>
+
+    <p>
+      Seni tanımak,<br>
+      hayatımın en güzel algoritması 💻💖
+    </p>
+  </div>
+
+  <script>
+    function goster() {
+      document.getElementById("favoriler").classList.toggle("show");
+    }
+
+    // Sürekli emoji ve kalp yağmuru
+    const emojiler = ["❤️","💖","💘","🥐","🍝","🍉","🍓"];
+
+    setInterval(() => {
+      const e = document.createElement("div");
+      e.className = "emoji";
+      e.innerText = emojiler[Math.floor(Math.random() * emojiler.length)];
+      e.style.left = Math.random() * 100 + "vw";
+      e.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(e);
+
+      setTimeout(() => {
+        e.remove();
+      }, 8000);
+    }, 300);
+  </script>
+
+</body>
+</html>
